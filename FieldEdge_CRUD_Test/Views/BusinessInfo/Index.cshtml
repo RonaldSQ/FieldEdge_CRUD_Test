@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FieldEdge_CRUD_Test.Models.BusinessInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Business)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Recieved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Business)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Recieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Orginization }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Orginization }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Orginization })
+        </td>
+    </tr>
+}
+
+</table>
